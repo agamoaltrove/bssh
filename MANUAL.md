@@ -117,6 +117,11 @@ The `auth` method is deduced from the fields present — no explicit `method` fi
 | `key` + `pass` | `passphrase` | SSH with private key + passphrase (via sshpass) |
 | none | `manual` | Interactive password prompt (no sshpass) |
 
+`auth.pass` may also be encoded/obfuscated:
+- `base64:<value>` — base64-decoded at runtime
+- `pass:<entry>` — read from the `pass` password store (`pass show <entry>`)
+
+
 ### Jump host(s)
 
 The `jump` list defines one or more bastion hosts (multi-jump). Each entry has its own `user`, `host`, `port` and `auth`, following the same deduction rules above.

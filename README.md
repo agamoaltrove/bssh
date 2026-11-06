@@ -28,6 +28,7 @@ No JSON, no databases, no npm install — just bash, yq, fzf, and sshpass.
 | yq | any recent version (mikefarah/yq) |
 | fzf | any recent version |
 | sshpass | needed for password/passphrase/jump methods |
+| pass | optional, for `pass:<entry>` secrets |
 
 That's it. Every system with bash has most of these; the rest are a single `apt install` away.
 
@@ -81,6 +82,16 @@ The `auth` method is deduced from the fields present — no `method` field neede
 | `pass` only | `password` | SSH with password |
 | `key` + `pass` | `passphrase` | SSH with private key + passphrase |
 | none | `manual` | Interactive password prompt |
+
+`auth.pass` may also be encoded/obfuscated:
+- `base64:<value>` — base64-decoded at runtime
+- `pass:<entry>` — read from the `pass` password store (`pass show <entry>`)
+
+
+`auth.pass` may also be encoded/obfuscated:
+- `base64:<value>` — base64-decoded at runtime
+- `pass:<entry>` — read from the `pass` password store (`pass show <entry>`)
+
 
 ### Jump host(s)
 
