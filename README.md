@@ -34,8 +34,9 @@ That's it. Every system with bash has most of these; the rest are a single `apt 
 ## Installation
 
 ```bash
-# 1. Clone or copy the scripts somewhere
+# 1. Get the scripts (clone or download a release)
 git clone <repo-url> ~/bssh
+# or download the release archive and extract it where you prefer
 cd ~/bssh
 
 # 2. Make executable
