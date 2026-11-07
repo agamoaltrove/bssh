@@ -6,7 +6,7 @@ set -f
 
 bscp_version="1.0.0"
 
-SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 source "$SCRIPT_DIR/bssh.sh"
 
 show_version() {
